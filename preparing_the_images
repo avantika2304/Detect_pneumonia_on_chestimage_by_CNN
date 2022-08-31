@@ -1,0 +1,23 @@
+## resize the images convert them to gray and append them to the empty list and adding exception to remove corrupt images.
+imageSize=128
+Dataset=[]
+labeldict={}
+
+for Category in Categories:
+    folderPath=os.path.join(dataPath,Category)
+    #print(folderPath)
+    imageNames=os.listdir(folderPath)
+    #print(imageNames)
+    
+    for imageName in imageNames:
+        imagePath=os.path.join(folderPath,imageName)
+         #print(imagePath)
+        image=cv.imread(imagePath)
+        
+        try:
+            grayImage = cv.cvtColor(image,cv.COLOR_BGR2GRAY)
+            resized=cv.resize(grayImage,(imageSize,imageSize))
+            Dataset.append([resized,labeldict[Category]])
+            
+        except Exception as e:
+            print(e)
