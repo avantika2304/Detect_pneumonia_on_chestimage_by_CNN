@@ -1,0 +1,16 @@
+import cv2 as cv
+import os
+
+dataPath='F:\data\dataset\Chestimages'
+Categories=os.listdir(dataPath)
+
+labels=[i for i in range (len(Categories))]
+
+labeldict={}
+
+for i in range(len(Categories)):
+    labeldict[Categories[i]]=labels[i]
+    
+print(Categories)
+print(labels)
+print(labeldict)
