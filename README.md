@@ -1,0 +1,1 @@
+# Detect_pneumonia_on_chestimage_by_CNN
