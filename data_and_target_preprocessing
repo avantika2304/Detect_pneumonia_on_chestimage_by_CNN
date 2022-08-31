@@ -1,0 +1,28 @@
+import numpy as np
+data=[]
+target=[]
+imageSize=128
+Dataset=[]
+labeldict={}
+
+
+data=np.array(data)/255
+print(data.shape)
+data=np.reshape(data,(data.shape[0],imageSize,imageSize,1))
+target=np.array(target)
+
+print(data.shape)
+print(target.shape)
+
+from keras.utils import np_utils
+newTarget=np_utils.to_categorical([],target)
+##print(newTarget)
+
+np.save('dataChestXray',data)
+np.save('targetChestXray',newTarget)
+
+import numpy as np
+
+data=np.load('dataChestXray.npy')
+target=np.load('targetChestXray.npy')
+print(data.shape[1:])
