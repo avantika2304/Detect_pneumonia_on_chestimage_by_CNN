@@ -1,0 +1,7 @@
+## append from features that is resized images and target images as the label
+data=[]
+target=[]
+
+for feature,label in Dataset:
+    data.append(feature)
+    target.append(label)
