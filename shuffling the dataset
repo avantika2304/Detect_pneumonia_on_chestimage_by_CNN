@@ -1,0 +1,3 @@
+##in the inital part there are two categories of images normal and pneumonia images so shuffling is necessary here
+from random import shuffle
+shuffle(Dataset)
